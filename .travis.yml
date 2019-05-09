@@ -1,8 +1,13 @@
 language: python
 install: pip3 install --upgrade pip
-deploy:
-  provider: releases
-  api_key:
-    secure: YhzW1Pipz3zXXz1+mzpCRFBEcDGTJTexT4PWxO2ujAsHAw2sK/a8HxQMlokD6lKTXMhwQgPHKVaaGFy+exr4UWFL94t7jr9yUBCo6xT30PdP0raU8h7ygH0Bw3OEJUzb3ID2KcNKCQxrmIddZAfBJ1W15AUVfPNLRLeuNWi4xrdASyNiW0Lk+fdy3WQY1ixgAYNAc9FmT/+dlqd2sIiH3B4pxIqkBNS9RptLgZRTq/ZOEZcpZyXV33A8Xxs+ZqKyAdMv2CYkOCmgSq0PuhBrG6iH8oEXcCQzU8wfeksGoey6uN+DsMORfER/F9GyQmAUSBKwAQN5LpnjauWuQUO8T86O92yzfXl9JwZDE78wDVAaephuwRMN43vUyHhAek95sYslqsxwwaq0e+PMPsp8/R8qohn1Wzkw1Xz8EH/D8Wd3hDA2Auh6mM6k511Kmn7s9ebCAPTl/pe+v9Togi1BhhayWKR0Aa484rtEFq2G07N/0gH1QMVq2OxQ5u/bFozDVSjdw/Eo+Ne94IwkuSgfOKQARtdALqlUfq0PK/xaS/bDW3Sp/mWTD25CTSlWUbScZbz+NaaJJVgSxoX1vY800fZxC6yTFAjuKBXrRHAVHvLxC43p640N9O4m5aNkPbOk/ZM9ACHosMv3WstaV4Stvbrb1QLeg/L2jiySzRFqi8I=
-  on:
-    repo: anthshor/python-hello
+jobs:
+  include:
+  - stage: test
+    script: sh test/test1.sh
+  - stage: deploy
+    deploy:
+      provider: releases
+      api_key:
+        secure: YhzW1Pipz3zXXz1+mzpCRFBEcDGTJTexT4PWxO2ujAsHAw2sK/a8HxQMlokD6lKTXMhwQgPHKVaaGFy+exr4UWFL94t7jr9yUBCo6xT30PdP0raU8h7ygH0Bw3OEJUzb3ID2KcNKCQxrmIddZAfBJ1W15AUVfPNLRLeuNWi4xrdASyNiW0Lk+fdy3WQY1ixgAYNAc9FmT/+dlqd2sIiH3B4pxIqkBNS9RptLgZRTq/ZOEZcpZyXV33A8Xxs+ZqKyAdMv2CYkOCmgSq0PuhBrG6iH8oEXcCQzU8wfeksGoey6uN+DsMORfER/F9GyQmAUSBKwAQN5LpnjauWuQUO8T86O92yzfXl9JwZDE78wDVAaephuwRMN43vUyHhAek95sYslqsxwwaq0e+PMPsp8/R8qohn1Wzkw1Xz8EH/D8Wd3hDA2Auh6mM6k511Kmn7s9ebCAPTl/pe+v9Togi1BhhayWKR0Aa484rtEFq2G07N/0gH1QMVq2OxQ5u/bFozDVSjdw/Eo+Ne94IwkuSgfOKQARtdALqlUfq0PK/xaS/bDW3Sp/mWTD25CTSlWUbScZbz+NaaJJVgSxoX1vY800fZxC6yTFAjuKBXrRHAVHvLxC43p640N9O4m5aNkPbOk/ZM9ACHosMv3WstaV4Stvbrb1QLeg/L2jiySzRFqi8I=
+      on:
+        repo: anthshor/python-hello
