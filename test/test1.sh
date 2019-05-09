@@ -1,6 +1,6 @@
 #!/bin/bash
 
-result=`python hello.sh`
+result=`python hello.py`
 
 if [ $result == "hello" ]; then 
   exit 0
