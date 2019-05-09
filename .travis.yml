@@ -1,4 +1,5 @@
 language: python
+install: pip3 install --upgrade pip
 deploy:
   provider: releases
   api_key:
