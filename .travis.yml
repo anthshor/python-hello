@@ -1,6 +1,6 @@
 language: python
 install: pip3 install --upgrade pip
-script: bash test/test1.sh
+script: python test/test1.py
 deploy:
   provider: releases
   api_key:
